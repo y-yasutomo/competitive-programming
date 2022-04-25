@@ -19,7 +19,16 @@ int main() {
     rep(i,q){
         int idx ; cin >> idx ;
         if(idx==0){
-            a.reverse(a.begin(),a.end());
+            reverse(a.begin(),a.end());
+        }else if(idx==1){
+            int v ; cin >> v ;
+            a.push_back(v) ;
+        }else{
+            if(a.size()<1) cout << "Error" << endl ;
+            else{
+                cout << a.back() << endl ;
+                a.pop_back() ;
+            }
         }
     }
     return 0 ;

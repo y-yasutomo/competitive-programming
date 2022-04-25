@@ -14,12 +14,20 @@ int main() {
     cin >> n ;
     vector<int> a(n) ;
     rep(i,n) cin >> a[i]  ;
+    reverse(a.begin(),a.end()) ;
     int q ;
     cin >> q ;
     rep(i,q){
         int idx ; cin >> idx ;
         if(idx==0){
-            a.reverse(a.begin(),a.end());
+            int v ; cin >> v ;
+            a.push_back(v) ;
+        }else{
+            if(a.size()<1) cout << "Error" << endl ;
+            else{
+                cout << a.back() << endl ;
+                a.pop_back() ;
+            }
         }
     }
     return 0 ;
