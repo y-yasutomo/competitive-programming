@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <vector>
 #include <bitset>
-#include <set>
+#include <string>
 #include <map>
 using namespace std;
 using ll = long long ;
@@ -11,26 +11,22 @@ const int INF = 1001001001 ;
 const int MOD = 10007 ; 
 
 int main() {
-    int n,q ;
-    cin >> n >> q ;
-    vector<set<int>> a(n) ;
-    rep(i,q){
-        int idx ; cin >> idx ;
-        if(idx==0){
-            int x,y ;
-            cin >> x >> y ;
-            a[y].insert(x) ;
-        }else{
-            int z ; cin >> z ;
-            if(a[z].size()>0){
-                for(auto x : a[z]){
-                    cout << x << ' ' ;
-                }
-                cout << endl ;
-            }else{
-                cout << "No" << endl ;
-            }
+    int n ;
+    string t ;
+    map<string,int> mp ;
+    cin >> n >> t ;
+    rep(i,n){
+        int m ; cin >> m ;
+        rep(j,m){
+            string s ; cin >> s ;
+            mp[s]++ ;
         }
+    }
+    auto itr = mp.find(t) ;
+    if( itr != mp.end() ) {
+        cout << mp[t] << endl ;
+    } else {
+        cout << 0 << endl ;
     }
     return 0 ;
 }
